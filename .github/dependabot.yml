@@ -1,0 +1,21 @@
+# Dependabot: version updates + security updates.
+# - pip ecosystem covers Poetry (pyproject.toml / poetry.lock).
+# - github-actions keeps workflow action versions current (supply-chain hardening).
+# Updates are grouped to minimize PR noise.
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      python-dependencies:
+        patterns: ["*"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns: ["*"]
